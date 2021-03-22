@@ -1,6 +1,6 @@
 import styled, {css} from 'styled-components'
 
-export const CabecalhoWrapper = styled.div`
+export const HeaderWrapper = styled.div`
     font-family: 'Nunito Sans', sans-serif;
     background-color: #332261;
     height:63px;
@@ -13,12 +13,12 @@ export const CabecalhoWrapper = styled.div`
 `;
 
 
-CabecalhoWrapper.Logo = styled.div`
+HeaderWrapper.Brand = styled.div`
     color:#FFFFFF;
     font-size:18;
     font-weight:bold;
 `;
-CabecalhoWrapper.Navbar = styled.nav`
+HeaderWrapper.Navbar = styled.nav`
     width:146px;
     list-style: none;
     color:#FFFFFF;

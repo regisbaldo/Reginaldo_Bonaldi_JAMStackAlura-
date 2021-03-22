@@ -1,8 +1,7 @@
-import Cabecalho from '../src/componentes/commons/Cabecalho'
-import Capa from '../src/componentes/commons/Capa'
-import Card from '../src/componentes/commons/Card';
+import Header from '../src/componentes/commons/Header'
+import Cover from '../src/componentes/commons/Cover'
 import Footer from '../src/componentes/commons/Footer'
-import Projetos from '../src/componentes/commons/Projetos'
+import Projects from '../src/componentes/commons/Projects'
 import { Box } from '../src/componentes/foundation/Box';
 
 export default function Home() {
@@ -15,10 +14,10 @@ export default function Home() {
     justifyContent="space-between"
  
     >
-      <Cabecalho></Cabecalho>
-      <Capa></Capa>
-      <Projetos>
-      </Projetos>
+      <Header></Header>
+      <Cover></Cover>
+      <Projects>
+      </Projects>
       <Footer></Footer>
     </Box>
     

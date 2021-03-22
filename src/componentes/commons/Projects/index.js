@@ -1,13 +1,12 @@
-import styled from 'styled-components'
 import SectionTitle from '../SectionTitle'
-import { BaseWrapperProjetos, WrapperProjetosBody } from '../Projetos/WrapperProjetos'
+import { BaseWrapperProjects} from './WrapperProjetos'
 import Card from '../Card'
 import { Grid } from '../../foundation/layout/Grid';
 
 
-export default function Projetos({ children }) {
+export default function Projects({ children }) {
     return (
-        <BaseWrapperProjetos
+        <BaseWrapperProjects
             marginRight={{
                 xs: '0px',
                 md: '145px',
@@ -83,7 +82,7 @@ export default function Projetos({ children }) {
 
 
 
-        </BaseWrapperProjetos>
+        </BaseWrapperProjects>
     )
 
 }
