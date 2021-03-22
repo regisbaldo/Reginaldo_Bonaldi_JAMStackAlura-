@@ -36,7 +36,6 @@ const titleCard = css`
   `}
 `;
 
-
 export const TextStyleVariants = {
   smallestException,
   paragraph1,
@@ -50,7 +49,7 @@ export const TextStyleVariants = {
       color: #2B1D51;
     `}
     ${breakpointsMedia({
-      md: css`
+    md: css`
         ${({ theme }) => css`
           font-size: ${theme.typographyVariants.title.fontSize};
           font-weight: ${theme.typographyVariants.title.fontWeight};
@@ -59,7 +58,7 @@ export const TextStyleVariants = {
 
         `}
       `,
-    })}
+  })}
   `,
 };
 
@@ -69,7 +68,7 @@ const TextBase = styled.span`
   ${propToStyle('textAlign')}
 `;
 
- export function Text({
+export function Text({
   variant,
   children,
   tag,
@@ -95,5 +94,5 @@ Text.defaultProps = {
 Text.propTypes = {
   children: PropTypes.node.isRequired,
   tag: PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'p', 'li', 'a', 'span']),
-  variant: PropTypes.oneOf(['title', 'paragraph1', 'smallestException', 'subTitle','titleCard']),
+  variant: PropTypes.oneOf(['title', 'paragraph1', 'smallestException', 'subTitle', 'titleCard']),
 };

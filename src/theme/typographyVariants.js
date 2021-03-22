@@ -16,7 +16,7 @@ export const typographyVariants = {
   },
   subTitle: {
     fontSize: '20px',
-    fontWeight: '400',    
+    fontWeight: '400',
     lineHeight: 1.25,
   },
   paragraph1: {

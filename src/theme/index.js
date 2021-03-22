@@ -16,7 +16,7 @@ export const colors = {
   },
   primary: {
     main: {
-      color: '#D7385E', 
+      color: '#D7385E',
       contrastText: '#fff',
     },
   },

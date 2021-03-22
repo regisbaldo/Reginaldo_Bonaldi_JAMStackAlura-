@@ -1,58 +1,58 @@
-import styled, { css } from 'styled-components';
+/* eslint-disable react/jsx-props-no-spreading */
+import React from 'react';
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import { Text } from '../../foundation/Text';
 import { Star } from './star';
-import { propToStyle } from '../../../theme/utils/propToStyle';
 import { Grid } from '../../foundation/layout/Grid';
 
+export default function Card({
+  star, titulo, texto, ...props
+}) {
+  return (
+    <BaseCard {...props} flexDirection={{ xs: 'column', md: 'row' }}>
+      <Grid.Container>
+        <Grid.Row>
+          <Grid.Col
+            offset={{ xs: 0, md: 0 }}
+            value={{ xs: 12, md: 7 }}
+            display="flex"
+            alignItems="flex-start"
+            justifyContent="center"
+            flexDirection="row"
+            paddingTop={{ xs: 0, md: 0 }}
+            paddingBottom={{ xs: 0, md: 0 }}
+          >
+            {star && (
+              <Star />
+            )}
+            <CardImagem src="/images/instalura.webp" />
+          </Grid.Col>
+          <Grid.Col
+            offset={{ xs: 0, md: 0 }}
+            value={{ xs: 12, md: 5 }}
+            display="flex"
+            alignItems="flex-start"
+            justifyContent="center"
+            flexDirection="row"
+            paddingTop={{ xs: 0, md: 0 }}
+            paddingBottom={{ xs: 0, md: 0 }}
+          >
+            <TextArea>
+              <TitleCard>
+                <Text as="p" variant="titleCard">{titulo}</Text>
+              </TitleCard>
+              <DescriptionCard>
+                <Text as="p" variant="titleCard">{texto}</Text>
+              </DescriptionCard>
+            </TextArea>
+          </Grid.Col>
+        </Grid.Row>
+      </Grid.Container>
 
-export default function Card(props) {
+    </BaseCard>
 
-    return (
-        <BaseCard {...props} flexDirection={{ xs: "column", md: "row" }} >
-            <Grid.Container>
-                <Grid.Row>
-                    <Grid.Col
-                        offset={{ xs: 0, md: 0 }}
-                        value={{ xs: 12, md: 7 }}
-                        display="flex"
-                        alignItems="flex-start"
-                        justifyContent="center"
-                        flexDirection="row"
-                        paddingTop={{ xs: 0, md: 0 }}
-                        paddingBottom={{ xs: 0, md: 0 }}
-
-                        >
-                        <CardImagem src="/images/instalura.webp">
-
-                        </CardImagem>
-                    </Grid.Col>
-                    <Grid.Col
-                        offset={{ xs: 0, md: 0 }}
-                        value={{ xs: 12, md: 5 }}
-                        display="flex"
-                        alignItems="flex-start"
-                        justifyContent="center"
-                        flexDirection="row"
-                        paddingTop={{ xs: 0, md: 0 }}
-                        paddingBottom={{ xs: 0, md: 0 }}
-                        
-                        >
-                        <TextArea>
-                            <TitleCard >
-                                <Text as="p" variant="titleCard">{props.titulo}</Text>
-                            </TitleCard>
-                            <DescriptionCard >
-                                <Text as="p" variant="titleCard">{props.texto}</Text>
-                            </DescriptionCard>
-                        </TextArea>
-                    </Grid.Col>
-                </Grid.Row>
-            </Grid.Container>
-
-
-        </BaseCard>
-
-    )
+  );
 }
 
 const BaseCard = styled.div`
@@ -62,14 +62,6 @@ justify-content:start;
 align-items:center;
 padding-bottom:40px;
 flex:1;
-    ${function (props) {
-        if (props.destaque == 'true') {
-            console.log(props.destaque);
-            return propToStyle('flexDirection');
-
-        }
-    }}
-
 `;
 
 const TitleCard = styled.div`
@@ -98,6 +90,13 @@ export const CardImagem = styled.img`
 `;
 
 Card.defaultProps = {
-    destaque: false,
-    titulo: '',
+  star: false,
+  titulo: '',
+  texto: '',
+};
+
+Card.propTypes = {
+  star: PropTypes.bool,
+  titulo: PropTypes.string,
+  texto: PropTypes.string,
 };

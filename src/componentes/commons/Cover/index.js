@@ -1,4 +1,5 @@
-import styled from 'styled-components'
+import React from 'react';
+import styled from 'styled-components';
 import { Text } from '../../foundation/Text';
 import { propToStyle } from '../../../theme/utils/propToStyle';
 
@@ -20,23 +21,22 @@ width:300px;
 
 `;
 
-
-export default function Capa(){
-    return (
-        <BaseCover
-        backgroundImage={{
-            xs: 'url(/images/ImageCapaM.svg)',
-            md: 'url(/images/ImageCapaD.svg)',
-        }}
-        >
-        <TextCover>
-            <Text as="span" variant="subTitle">
-                    PORTFOLIO
-                </Text>
-            <Text as="p" variant="title">
-                Reginaldo Bonaldi
-            </Text>
-        </TextCover>
-        </BaseCover>
-    ) 
-}   
+export default function Capa() {
+  return (
+    <BaseCover
+      backgroundImage={{
+        xs: 'url(/images/ImageCapaM.svg)',
+        md: 'url(/images/ImageCapaD.svg)',
+      }}
+    >
+      <TextCover>
+        <Text as="span" variant="subTitle">
+          PORTFOLIO
+        </Text>
+        <Text as="p" variant="title">
+          Reginaldo Bonaldi
+        </Text>
+      </TextCover>
+    </BaseCover>
+  );
+}

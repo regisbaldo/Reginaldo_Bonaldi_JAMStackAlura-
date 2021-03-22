@@ -1,5 +1,6 @@
-import styled from 'styled-components'
-import theme from '../../../theme'
+import React from 'react';
+import styled from 'styled-components';
+import theme from '../../../theme';
 
 const BaseSectionTitle = styled.div`
     width: 295px;
@@ -19,12 +20,10 @@ const BaseSectionTitle = styled.div`
     transform: translateX(-50%);
 `;
 
-
-export default function SectionTitle(){
-    return(
-        <BaseSectionTitle>
-            <p>PROJETOS</p>
-        </BaseSectionTitle>
-    )
-
+export default function SectionTitle() {
+  return (
+    <BaseSectionTitle>
+      <p>PROJETOS</p>
+    </BaseSectionTitle>
+  );
 }

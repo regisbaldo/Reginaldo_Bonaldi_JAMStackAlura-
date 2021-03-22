@@ -1,6 +1,8 @@
-import styled from 'styled-components'
-import theme from '../../../theme'
-import {Github} from '../Footer/FooterIcons'
+import React from 'react';
+import styled from 'styled-components';
+import theme from '../../../theme';
+import { Github } from './FooterIcons';
+
 const FooterWrapper = styled.footer`
     
 `;
@@ -28,23 +30,21 @@ FooterWrapper.IconWrapper.Icon = styled.div`
 
 `;
 
-
-export default function Footer(){
-    return (
-        <FooterWrapper>
-            <FooterWrapper.IconWrapper>
-                <FooterWrapper.IconWrapper.Icon>
-                    <Github/>
-                </FooterWrapper.IconWrapper.Icon>
-                <FooterWrapper.IconWrapper.Icon>
-                    <Github/>
-                </FooterWrapper.IconWrapper.Icon>
-                <FooterWrapper.IconWrapper.Icon>
-                    <Github/>
-                </FooterWrapper.IconWrapper.Icon>
-            </FooterWrapper.IconWrapper>
-            <FooterWrapper.Bottom>
-            </FooterWrapper.Bottom>
-        </FooterWrapper>
-    )
+export default function Footer() {
+  return (
+    <FooterWrapper>
+      <FooterWrapper.IconWrapper>
+        <FooterWrapper.IconWrapper.Icon>
+          <Github />
+        </FooterWrapper.IconWrapper.Icon>
+        <FooterWrapper.IconWrapper.Icon>
+          <Github />
+        </FooterWrapper.IconWrapper.Icon>
+        <FooterWrapper.IconWrapper.Icon>
+          <Github />
+        </FooterWrapper.IconWrapper.Icon>
+      </FooterWrapper.IconWrapper>
+      <FooterWrapper.Bottom />
+    </FooterWrapper>
+  );
 }

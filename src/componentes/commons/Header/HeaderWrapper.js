@@ -1,4 +1,4 @@
-import styled, {css} from 'styled-components'
+import styled from 'styled-components';
 
 export const HeaderWrapper = styled.div`
     font-family: 'Nunito Sans', sans-serif;
@@ -11,7 +11,6 @@ export const HeaderWrapper = styled.div`
     justify-content: space-between;
     flex-wrap: wrap;
 `;
-
 
 HeaderWrapper.Brand = styled.div`
     color:#FFFFFF;
