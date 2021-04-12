@@ -16,13 +16,13 @@ export const colors = {
   },
   primary: {
     main: {
-      color: '#D7385E',
+      color: '#FF79C6',
       contrastText: '#fff',
     },
   },
   secondary: {
     main: {
-      color: '#FB7B6B',
+      color: '#D7385E',
       contrastText: '#fff',
     },
   },
@@ -54,6 +54,6 @@ export default {
   typographyVariants,
   breakpoints,
   borderRadius: '5px',
-  fontFamily: '\'Nunito Sans\', sans-serif',
+  fontFamily: '\'Roboto Slab\', serif',
   transition: '190ms ease-in-out',
 };

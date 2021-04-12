@@ -1,102 +1,77 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import PropTypes from 'prop-types';
 import { Text } from '../../foundation/Text';
-import { Star } from './star';
-import { Grid } from '../../foundation/layout/Grid';
+
+const CardWrapper = styled.div`
+  width:210px;
+  background-color: #39CC9B;
+  border-radius: 5px;
+  margin-bottom:30px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+`;
+CardWrapper.SubTitle = styled.div`
+
+
+  margin-top:12px;
+  padding-top:2px;
+  padding-bottom:2px;
+  width:149px;
+  background-color:  #FF79C6;
+  border-radius:5px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  
+`;
+CardWrapper.Title = styled.div`
+  color: #ffffff;
+  padding-bottom:26px;
+  font-family:'Poppins', sans-serif;
+  ${({ subTitle }) => {
+    if (!subTitle) {
+      return css`
+      padding-top:12px;
+      padding-bottom:12px;
+      
+      `;
+    }
+    return null;
+  }}
+`;
 
 export default function Card({
-  star, titulo, texto, ...props
+  title, subTitle, ...props
 }) {
   return (
-    <BaseCard {...props} flexDirection={{ xs: 'column', md: 'row' }}>
-      <Grid.Container>
-        <Grid.Row>
-          <Grid.Col
-            offset={{ xs: 0, md: 0 }}
-            value={{ xs: 12, md: 7 }}
-            display="flex"
-            alignItems="flex-start"
-            justifyContent="center"
-            flexDirection="row"
-            paddingTop={{ xs: 0, md: 0 }}
-            paddingBottom={{ xs: 0, md: 0 }}
-          >
-            {star && (
-              <Star />
-            )}
-            <CardImagem src="/images/instalura.webp" />
-          </Grid.Col>
-          <Grid.Col
-            offset={{ xs: 0, md: 0 }}
-            value={{ xs: 12, md: 5 }}
-            display="flex"
-            alignItems="flex-start"
-            justifyContent="center"
-            flexDirection="row"
-            paddingTop={{ xs: 0, md: 0 }}
-            paddingBottom={{ xs: 0, md: 0 }}
-          >
-            <TextArea>
-              <TitleCard>
-                <Text as="p" variant="titleCard">{titulo}</Text>
-              </TitleCard>
-              <DescriptionCard>
-                <Text as="p" variant="titleCard">{texto}</Text>
-              </DescriptionCard>
-            </TextArea>
-          </Grid.Col>
-        </Grid.Row>
-      </Grid.Container>
-
-    </BaseCard>
+    <CardWrapper {...props}>
+      {subTitle
+      && (
+      <CardWrapper.SubTitle>
+        <Text letterSpacing="3px" textAlign="center" as="span" variant="subTitleCard">
+          {subTitle}
+        </Text>
+      </CardWrapper.SubTitle>
+      )}
+      <CardWrapper.Title subTitle={subTitle} {...props}>
+        <Text textAlign="center" as="div" variant="titleCard">
+          {title}
+        </Text>
+      </CardWrapper.Title>
+    </CardWrapper>
 
   );
 }
 
-const BaseCard = styled.div`
-display:flex;
-flex-direction:column;
-justify-content:start;
-align-items:center;
-padding-bottom:40px;
-flex:1;
-`;
-
-const TitleCard = styled.div`
-font-size:20px;
-font-weight:bold;
-text-align:center;
-`;
-
-const DescriptionCard = styled.div`
-font-size:20px;
-font-weight:bold;
-text-align:start;
-`;
-const TextArea = styled.div`
-height:100%;
-
-display:flex;
-flex-direction:column;
-justify-content:start;
-
-`;
-
-export const CardImagem = styled.img`
-    width:100%;
-    max-width: 500px;
-`;
-
 Card.defaultProps = {
-  star: false,
-  titulo: '',
-  texto: '',
+  title: '',
+  subTitle: '',
 };
 
 Card.propTypes = {
-  star: PropTypes.bool,
-  titulo: PropTypes.string,
-  texto: PropTypes.string,
+  title: PropTypes.string,
+  subTitle: PropTypes.string,
 };

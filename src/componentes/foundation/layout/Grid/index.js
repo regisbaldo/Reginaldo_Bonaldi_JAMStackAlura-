@@ -3,17 +3,16 @@ import { breakpointsMedia } from '../../../../theme/utils/breakpointsMedia';
 import { propToStyle } from '../../../../theme/utils/propToStyle';
 
 const Container = styled.div`
+
 width: 100%;
-padding-right: 28px;
-padding-left: 28px;
+padding-right: 20px;
+padding-left: 20px;
 margin-right: auto;
 margin-left: auto;
 ${breakpointsMedia({
     xs: css`
   max-width: initial;
 
-  padding-right: 28px;
-  padding-left: 28px;
 `,
     sm: css`
   max-width: 576px; 
@@ -34,14 +33,15 @@ ${propToStyle('marginTop')}
 `;
 
 const Row = styled.div`
+
     display: flex;
     flex-wrap: wrap;
-    margin-right: -16px;
-    margin-left: -16px;
+    margin-right: -20px;
+    margin-left: -20px;
   `;
 const Col = styled.div`
-  padding-right: 16px;
-  padding-left: 16px;
+  /* padding-right: 10px;
+  padding-left: 10px; */
   flex-basis: 0;
   flex-grow: 1;
   max-width: 100%;

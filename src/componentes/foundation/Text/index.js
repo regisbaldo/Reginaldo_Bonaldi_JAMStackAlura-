@@ -35,12 +35,82 @@ const titleCard = css`
     line-height: ${theme.typographyVariants.titleCard.lineHeight};
   `}
 `;
+const subTitleCard = css`
+  ${({ theme }) => css`
+    font-size: ${theme.typographyVariants.subTitleCard.fontSize};
+    font-weight: ${theme.typographyVariants.subTitleCard.fontWeight};
+    line-height: ${theme.typographyVariants.subTitleCard.lineHeight};
+  `}
+`;
+const TitleFooter = css`
+  ${({ theme }) => css`
+    font-size: ${theme.typographyVariants.TitleFooter.fontSize};
+    font-weight: ${theme.typographyVariants.TitleFooter.fontWeight};
+    line-height: ${theme.typographyVariants.TitleFooter.lineHeight};
+  `}
+`;
+const titleCover = css`
+  ${({ theme }) => css`
+    font-size: ${theme.typographyVariants.titleCover.fontSize};
+    font-weight: ${theme.typographyVariants.titleCover.fontWeight};
+    line-height: ${theme.typographyVariants.titleCover.lineHeight};
+  `}
+  ${breakpointsMedia({
+    md: css`
+        ${({ theme }) => css`
+          font-size: ${theme.typographyVariants.titleCoverMD.fontSize};
+          font-weight: ${theme.typographyVariants.titleCoverMD.fontWeight};
+          line-height: ${theme.typographyVariants.titleCoverMD.lineHeight};
+
+        `}
+      `,
+  })}
+`;
+const subTitleCover = css`
+  ${({ theme }) => css`
+    font-size: ${theme.typographyVariants.subTitleCover.fontSize};
+    font-weight: ${theme.typographyVariants.subTitleCover.fontWeight};
+    line-height: ${theme.typographyVariants.subTitleCover.lineHeight};
+  `}
+  ${breakpointsMedia({
+    md: css`
+        ${({ theme }) => css`
+          font-size: ${theme.typographyVariants.subTitleCoverMD.fontSize};
+          font-weight: ${theme.typographyVariants.subTitleCoverMD.fontWeight};
+          line-height: ${theme.typographyVariants.subTitleCoverMD.lineHeight};
+
+        `}
+      `,
+  })}
+`;
+const section = css`
+  ${({ theme }) => css`
+    font-size: ${theme.typographyVariants.section.fontSize};
+    font-weight: ${theme.typographyVariants.section.fontWeight};
+    line-height: ${theme.typographyVariants.section.lineHeight};
+  `}
+  ${breakpointsMedia({
+    md: css`
+        ${({ theme }) => css`
+          font-size: ${theme.typographyVariants.sectionMD.fontSize};
+          font-weight: ${theme.typographyVariants.sectionMD.fontWeight};
+          line-height: ${theme.typographyVariants.sectionMD.lineHeight};
+
+        `}
+      `,
+  })}
+`;
 
 export const TextStyleVariants = {
   smallestException,
   paragraph1,
   subTitle,
   titleCard,
+  subTitleCard,
+  TitleFooter,
+  titleCover,
+  subTitleCover,
+  section,
   title: css`
     ${({ theme }) => css`
       font-size: ${theme.typographyVariants.titleXS.fontSize};
@@ -66,6 +136,7 @@ const TextBase = styled.span`
   ${({ variant }) => TextStyleVariants[variant]}
   color: ${({ theme, color }) => get(theme, `colors.${color}.color`)};
   ${propToStyle('textAlign')}
+  ${propToStyle('letterSpacing')}
 `;
 
 export function Text({
@@ -94,5 +165,6 @@ Text.defaultProps = {
 Text.propTypes = {
   children: PropTypes.node.isRequired,
   tag: PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'p', 'li', 'a', 'span']),
-  variant: PropTypes.oneOf(['title', 'paragraph1', 'smallestException', 'subTitle', 'titleCard']),
+  variant: PropTypes.oneOf(['title', 'paragraph1', 'titleCover', 'subTitleCover',
+    'smallestException', 'subTitle', 'titleCard', 'subTitleCard', 'TitleFooter', 'section']),
 };

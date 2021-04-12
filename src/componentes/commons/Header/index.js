@@ -1,16 +1,16 @@
 import React from 'react';
+import Button from '../Button';
 
 import { HeaderWrapper } from './HeaderWrapper';
 
 export default function Header() {
   return (
     <HeaderWrapper>
-      <HeaderWrapper.Brand>
-        {'<RB/>'}
-      </HeaderWrapper.Brand>
+      <HeaderWrapper.BrandWrapper>
+        <HeaderWrapper.BrandImage src="/images/logo.jpeg" />
+      </HeaderWrapper.BrandWrapper>
       <HeaderWrapper.Navbar>
-        <li>Sobre Mim</li>
-        <li>Contato</li>
+        <Button type="primary" text="Contact me" />
       </HeaderWrapper.Navbar>
     </HeaderWrapper>
 

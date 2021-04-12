@@ -1,30 +1,30 @@
 import styled from 'styled-components';
 
 export const HeaderWrapper = styled.div`
-    font-family: 'Nunito Sans', sans-serif;
-    background-color: #332261;
-    height:63px;
-    padding-left:28px;
-    padding-right:28px;
+    background-color: #FFFFFF;
+    height:67px;
+    padding-left:20px;
+    padding-right:20px;
     display:flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
 `;
 
-HeaderWrapper.Brand = styled.div`
+HeaderWrapper.BrandWrapper = styled.div`
+    height:80%;
+   
+`;
+
+HeaderWrapper.BrandImage = styled.img`
+    height:100%;
     color:#FFFFFF;
+    border-radius: 50%;
+    border:5px solid #39CC9B;
     font-size:18;
     font-weight:bold;
 `;
 HeaderWrapper.Navbar = styled.nav`
-    width:146px;
     list-style: none;
-    color:#FFFFFF;
-    font-size:18;
-    font-weight:bold;
-    display:flex;
-    align-items: center;
-    justify-content: space-between;
-
+    
 `;
